@@ -1,20 +1,27 @@
-/// <reference path="typings/angular2/angular2.d.ts" />
+import {Component, View, bootstrap, NgFor} from 'angular2/angular2';
+import {BurgerService} from './burgerservice';
 
-import {Component, View, bootstrap} from 'angular2/angular2';
-
-// Annotation section
 @Component({
-  selector: 'my-app'
+  selector: 'burgers',
+  viewInjector: [BurgerService]
 })
 @View({
-  template: '<h1>Hello {{ name }}</h1>'
+  template: `
+    <ol>
+      <li *ng-for="#burger of burgers" class="burger">
+        <a href="{{ burger.url }}" target="_blank">{{ burger.name }}</a>
+        <img src="img/{{ burger.img }}" class="img-responsive img-rounded"/>
+      </li>
+    </ol>
+  `,
+  directives: [NgFor]
 })
-// Component controller
-class MyAppComponent {
-  name: string;
-  constructor() {
-    this.name = "PJ";
+class DisplayComponent {
+  burgers: Array<string>;
+
+  constructor(burgerService : BurgerService) {
+    this.burgers = burgerService.burgers;
   }
 }
 
-bootstrap(MyAppComponent);
+bootstrap(DisplayComponent);
