@@ -6,6 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <style>
+    * {
+      font-size: 100%;
+      font-family: 'Inconsolata';
+    }
+  </style>
 
   <script src="../node_modules/es6-shim/es6-shim.js"></script>
   <script src="../node_modules/systemjs/dist/system.src.js"></script>
@@ -21,19 +29,35 @@
     });
     System.import('app/burgers.component');
   </script>
+
+  <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="../favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
   <div class="container">
-    <div class="jumbotron">
-      <h1>YABT - Yet Another Burger Tested</h1>
-      <h3>
-        <img src="img/burger.png" width="50px" /> BEST HAMBURGERS IN STOCKHOLM</h3>
-      <p>
-        We live and work in Stockholm, Sweden. We are software developers. We love hamburgers. We love it so much we decided to try and find the best lunch hamburger in town. We have a pretty simple criteria for which hamburgers to try and we have an even simpler
-        way to rank the hamburgers? So, if you’re ever in Stockholm and in the mood for a hamburger look no further.
-      </p>
-    </div>
+    <h1>YABT - Yet Another Burger Tested</h1>
+    <h3>
+      <img src="img/burger.png" width="50px" /> BEST HAMBURGERS IN STOCKHOLM</h3>
+    <p>
+      We live and work in Stockholm, Sweden. We are software developers. We love hamburgers. We love it so much we decided to try and find the best lunch hamburger in town. We have a pretty simple criteria for which hamburgers to try and we have an even simpler
+      way to rank the hamburgers? So, if you’re ever in Stockholm and in the mood for a hamburger look no further.
+    </p>
     <div class="row">
       <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
         <burgers>Eating burgers...</burgers>
