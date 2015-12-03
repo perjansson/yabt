@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>YABT - Yet Another Burger Tested</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+  <script src="../node_modules/es6-shim/es6-shim.js"></script>
+  <script src="../node_modules/systemjs/dist/system.src.js"></script>
+  <script src="../node_modules/angular2/bundles/angular2.dev.js"></script>
+
+  <script>
+    System.config({
+      packages: {
+        'app': {
+          defaultExtension: 'js'
+        }
+      }
+    });
+    System.import('app/burgers');
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>YABT - Yet Another Burger Tested</h1>
+      <h3>
+        <img src="img/burger.png" width="50px" /> BEST HAMBURGERS IN STOCKHOLM</h3>
+      <p>
+        We live and work in Stockholm, Sweden. We are software developers. We love hamburgers. We love it so much we decided to try and find the best lunch hamburger in town. We have a pretty simple criteria for which hamburgers to try and we have an even simpler
+        way to rank the hamburgers? So, if you’re ever in Stockholm and in the mood for a hamburger look no further.
+      </p>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+        <burgers>Eating burgers...</burgers>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
