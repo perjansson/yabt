@@ -8,15 +8,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var test_burgers_1 = require('./test-burgers');
+var burgers_data_1 = require('./burgers.data');
 var BurgerService = (function () {
     function BurgerService() {
     }
     BurgerService.prototype.getBurgers = function () {
-        return Promise.resolve(test_burgers_1.BURGERS);
+        return Promise.resolve(burgers_data_1.BURGERS);
     };
     BurgerService.prototype.getBurger = function (key) {
-        return Promise.resolve(test_burgers_1.BURGERS)
+        return Promise.resolve(burgers_data_1.BURGERS)
             .then(function (burgers) { return burgers.filter(function (h) { return h.key === key; })[0]; });
     };
     BurgerService = __decorate([

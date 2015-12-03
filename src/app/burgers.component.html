@@ -1,0 +1,6 @@
+<ol class="burgers">
+  <li *ng-for="#burger of burgers">
+    <a href="{{ burger.url }}" target="_blank">{{ burger.name }}</a>
+    <img src="img/{{ burger.img }}" class="img-responsive img-rounded"/>
+  </li>
+</ol>

@@ -1,5 +1,5 @@
 import {Injectable} from 'angular2/angular2';
-import {BURGERS} from './test-burgers';
+import {BURGERS} from './burgers.data';
 import {Burger} from './burger';
 
 @Injectable()

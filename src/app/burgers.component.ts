@@ -5,20 +5,8 @@ import {BurgerService} from './burger.service';
 @Component({
   selector: 'burgers',
   providers: [BurgerService],
-  template: `
-    <ol class="burgers">
-      <li *ng-for="#burger of burgers">
-        <a href="{{ burger.url }}" target="_blank">{{ burger.name }}</a>
-        <img src="img/{{ burger.img }}" class="img-responsive img-rounded"/>
-      </li>
-    </ol>
-    `,
-  styles: [`
-      .burgers li {
-        font-size: 2em;
-        margin-bottom: 20px;
-      }
-      `],
+  templateUrl: 'app/burgers.component.html',
+  styleUrls: ['app/burgers.component.css'],
   directives: [CORE_DIRECTIVES, FORM_DIRECTIVES]
 })
 
@@ -28,10 +16,10 @@ class BurgersComponent implements OnInit {
   constructor(private burgerService: BurgerService) { }
 
   getBurgers() {
-   this.burgers = [];
-   this.burgerService.getBurgers().then(burgers => this.burgers = burgers);
-   return this.burgers;
- }
+    this.burgers = [];
+    this.burgerService.getBurgers().then(burgers => this.burgers = burgers);
+    return this.burgers;
+  }
 
   ngOnInit() {
     this.burgers = this.getBurgers();

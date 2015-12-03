@@ -26,8 +26,8 @@ var BurgersComponent = (function () {
         angular2_1.Component({
             selector: 'burgers',
             providers: [burger_service_1.BurgerService],
-            template: "\n    <ol class=\"burgers\">\n      <li *ng-for=\"#burger of burgers\">\n        <a href=\"{{ burger.url }}\" target=\"_blank\">{{ burger.name }}</a>\n        <img src=\"img/{{ burger.img }}\" class=\"img-responsive img-rounded\"/>\n      </li>\n    </ol>\n    ",
-            styles: ["\n      .burgers li {\n        font-size: 2em;\n        margin-bottom: 20px;\n      }\n      "],
+            templateUrl: 'app/burgers.component.html',
+            styleUrls: ['app/burgers.component.css'],
             directives: [angular2_1.CORE_DIRECTIVES, angular2_1.FORM_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [burger_service_1.BurgerService])
@@ -35,4 +35,4 @@ var BurgersComponent = (function () {
     return BurgersComponent;
 })();
 angular2_1.bootstrap(BurgersComponent);
-//# sourceMappingURL=burgers.js.map
+//# sourceMappingURL=burgers.component.js.map
