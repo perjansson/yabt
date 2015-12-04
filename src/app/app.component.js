@@ -11,18 +11,22 @@ var angular2_1 = require('angular2/angular2');
 var router_1 = require('angular2/router');
 var routes_1 = require('./routes');
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(location) {
         this.routes = routes_1.ROUTE_NAMES;
+        this.location = location;
     }
+    AppComponent.prototype.getLinkStyle = function (path) {
+        return this.location.path() === path;
+    };
     AppComponent = __decorate([
         angular2_1.Component({
             selector: 'my-app',
-            template: "\n    <nav>\n      <div class=\"row\">\n        <div class=\"col-xs-12 text-center\">\n          <a [router-link]=\"[routes.burgers]\">Burgers</a>\n          <a [router-link]=\"[routes.map]\">Map</a>\n        </div>\n      </div>\n    </nav>\n    <main>\n      <div class=\"row\">\n        <div class=\"col-xs-offset-1 col-xs-10 col-lg-offset-2 col-lg-8\">\n          <router-outlet></router-outlet>\n        </div>\n      </div>\n    </main>\n  ",
-            styles: ["\n    nav a {\n      padding: 10px 20px;\n    }\n    nav a:hover {\n      background: #777;\n      text-decoration: none;\n      color: #fff;\n    }\n  "],
+            template: "\n    <nav>\n      <div class=\"row\">\n        <div class=\"col-xs-12 text-center\">\n          <a [class.active]=\"getLinkStyle('#/burgers')\" [router-link]=\"[routes.burgers]\">Burgers</a>\n          <a [class.active]=\"getLinkStyle('#/map')\" [router-link]=\"[routes.map]\">Map</a>\n        </div>\n      </div>\n    </nav>\n    <main>\n      <div class=\"row\">\n        <div class=\"col-xs-offset-1 col-xs-10 col-lg-offset-2 col-lg-8\">\n          <router-outlet></router-outlet>\n        </div>\n      </div>\n    </main>\n  ",
+            styles: ["\n    nav a {\n      padding: 10px 20px;\n        color: #777;\n    }\n    nav a:hover {\n      background: #777;\n      text-decoration: none;\n      color: #fff;\n    }\n    nav a.router-link-active {\n      background: #777;\n      color: #fff;\n    }\n  "],
             directives: [router_1.ROUTER_DIRECTIVES]
         }),
         router_1.RouteConfig(routes_1.ROUTES), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [router_1.Location])
     ], AppComponent);
     return AppComponent;
 })();

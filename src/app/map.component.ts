@@ -5,14 +5,13 @@ import {Burger} from './burger';
 import {BurgerService} from './burger.service';
 
 @Component({
-  selector: 'burgers',
+  selector: 'map',
   providers: [BurgerService],
-  templateUrl: 'app/burgers.component.html',
-  styleUrls: ['app/burgers.component.css'],
+  templateUrl: 'app/map.component.html',
   directives: [ROUTER_DIRECTIVES, CORE_DIRECTIVES, FORM_DIRECTIVES]
 })
 
-export class BurgersComponent implements OnInit {
+export class MapComponent implements OnInit {
   public burgers: Burger[];
 
   constructor(private burgerService: BurgerService) { }

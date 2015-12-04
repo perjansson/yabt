@@ -1,5 +1,5 @@
 import {Component} from 'angular2/angular2';
-import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {RouteConfig, Location, ROUTER_DIRECTIVES} from 'angular2/router';
 import {ROUTE_NAMES, ROUTES} from './routes';
 
 @Component({
@@ -8,8 +8,8 @@ import {ROUTE_NAMES, ROUTES} from './routes';
     <nav>
       <div class="row">
         <div class="col-xs-12 text-center">
-          <a [router-link]="[routes.burgers]">Burgers</a>
-          <a [router-link]="[routes.map]">Map</a>
+          <a [class.active]="getLinkStyle('#/burgers')" [router-link]="[routes.burgers]">Burgers</a>
+          <a [class.active]="getLinkStyle('#/map')" [router-link]="[routes.map]">Map</a>
         </div>
       </div>
     </nav>
@@ -24,10 +24,15 @@ import {ROUTE_NAMES, ROUTES} from './routes';
   styles: [`
     nav a {
       padding: 10px 20px;
+        color: #777;
     }
     nav a:hover {
       background: #777;
       text-decoration: none;
+      color: #fff;
+    }
+    nav a.router-link-active {
+      background: #777;
       color: #fff;
     }
   `],
@@ -37,5 +42,15 @@ import {ROUTE_NAMES, ROUTES} from './routes';
 @RouteConfig(ROUTES)
 
 export class AppComponent {
-  public routes = ROUTE_NAMES;
+
+  routes = ROUTE_NAMES;
+  location: Location;
+
+  constructor(location: Location) {
+        this.location = location;
+    }
+
+  getLinkStyle(path) {
+        return this.location.path() === path;
+    }
 }

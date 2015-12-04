@@ -10,30 +10,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var angular2_1 = require('angular2/angular2');
 var router_1 = require('angular2/router');
 var burger_service_1 = require('./burger.service');
-var BurgersComponent = (function () {
-    function BurgersComponent(burgerService) {
+var MapComponent = (function () {
+    function MapComponent(burgerService) {
         this.burgerService = burgerService;
     }
-    BurgersComponent.prototype.getBurgers = function () {
+    MapComponent.prototype.getBurgers = function () {
         var _this = this;
         this.burgers = [];
         this.burgerService.getBurgers().then(function (burgers) { return _this.burgers = burgers; });
         return this.burgers;
     };
-    BurgersComponent.prototype.ngOnInit = function () {
+    MapComponent.prototype.ngOnInit = function () {
         this.burgers = this.getBurgers();
     };
-    BurgersComponent = __decorate([
+    MapComponent = __decorate([
         angular2_1.Component({
-            selector: 'burgers',
+            selector: 'map',
             providers: [burger_service_1.BurgerService],
-            templateUrl: 'app/burgers.component.html',
-            styleUrls: ['app/burgers.component.css'],
+            templateUrl: 'app/map.component.html',
             directives: [router_1.ROUTER_DIRECTIVES, angular2_1.CORE_DIRECTIVES, angular2_1.FORM_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [burger_service_1.BurgerService])
-    ], BurgersComponent);
-    return BurgersComponent;
+    ], MapComponent);
+    return MapComponent;
 })();
-exports.BurgersComponent = BurgersComponent;
-//# sourceMappingURL=burgers.component.js.map
+exports.MapComponent = MapComponent;
+//# sourceMappingURL=map.component.js.map
