@@ -1,13 +1,16 @@
 import {Route, RouteDefinition} from 'angular2/router';
 import {BurgersComponent} from './burgers.component';
 import {MapComponent} from './map.component';
+import {AboutComponent} from './about.component';
 
 export const ROUTE_NAMES = {
   burgers: 'Burgers',
-  map: 'Map'
+  map: 'Map',
+  about: 'About'
 }
 
 export const ROUTES: RouteDefinition[] = [
   new Route({ path: "/burgers", component: BurgersComponent, name: ROUTE_NAMES.burgers }),
-  new Route({ path: "/map", component: MapComponent, name: ROUTE_NAMES.map })
+  new Route({ path: "/map", component: MapComponent, name: ROUTE_NAMES.map }),
+  new Route({ path: "/about", component: AboutComponent, name: ROUTE_NAMES.about })
 ];

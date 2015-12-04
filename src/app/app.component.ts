@@ -10,6 +10,7 @@ import {ROUTE_NAMES, ROUTES} from './routes';
         <div class="col-xs-12 text-center">
           <a [class.active]="getLinkStyle('#/burgers')" [router-link]="[routes.burgers]">Burgers</a>
           <a [class.active]="getLinkStyle('#/map')" [router-link]="[routes.map]">Map</a>
+          <a [class.active]="getLinkStyle('#/about')" [router-link]="[routes.about]">About</a>
         </div>
       </div>
     </nav>
@@ -22,9 +23,13 @@ import {ROUTE_NAMES, ROUTES} from './routes';
     </main>
   `,
   styles: [`
+    nav > .row {
+      margin-top: 30px;
+    }
     nav a {
       padding: 10px 20px;
-        color: #777;
+      color: #777;
+      font-size: 1.3em;
     }
     nav a:hover {
       background: #777;
@@ -34,6 +39,9 @@ import {ROUTE_NAMES, ROUTES} from './routes';
     nav a.router-link-active {
       background: #777;
       color: #fff;
+    }
+    main {
+      margin-top: 30px;
     }
   `],
   directives: [ROUTER_DIRECTIVES]
