@@ -8,6 +8,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
+var router_1 = require('angular2/router');
 var burger_service_1 = require('./burger.service');
 var BurgersComponent = (function () {
     function BurgersComponent(burgerService) {
@@ -28,11 +29,12 @@ var BurgersComponent = (function () {
             providers: [burger_service_1.BurgerService],
             templateUrl: 'app/burgers.component.html',
             styleUrls: ['app/burgers.component.css'],
-            directives: [angular2_1.CORE_DIRECTIVES, angular2_1.FORM_DIRECTIVES]
+            directives: [router_1.ROUTER_DIRECTIVES, angular2_1.CORE_DIRECTIVES, angular2_1.FORM_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [burger_service_1.BurgerService])
     ], BurgersComponent);
     return BurgersComponent;
 })();
+exports.BurgersComponent = BurgersComponent;
 angular2_1.bootstrap(BurgersComponent);
 //# sourceMappingURL=burgers.component.js.map
