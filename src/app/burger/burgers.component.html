@@ -3,6 +3,6 @@
       <p>
         <a href="{{ burger.url }}" target="_blank">{{ i+1 + '. ' + burger.name }}</a>
       </p>
-      <img src="img/{{ burger.key + '.jpg' }}" class="img-responsive" />
+      <img src="img/{{ burger.key + '.jpg' }}" (click)="onSelect(burger)" class="img-responsive" />
     </div>
 </div>

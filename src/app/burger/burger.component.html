@@ -1,0 +1,14 @@
+<div *ng-if="burger" class="burger">
+	<h4>Är du sugen på {{burger.name}} som är rankad nr #?</h4>
+	<div class="row">
+		<div class="col-xs-12">
+			<img src="img/{{ burger.key + '.jpg' }}" (click)="onSelect(burger)" class="img-responsive img-circle" />
+		</div>
+		<div class="col-xs-12">
+			<a href="{{ burger.url }}" target="_blank">Här är deras hemsida</a>
+		</div>
+		<div class="col-xs-12">
+			<button (click)="goBackToBurgers()" class="btn btn-default">Tillbaka</button>
+		</div>
+	</div>
+</div>

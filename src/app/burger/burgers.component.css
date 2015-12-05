@@ -5,6 +5,7 @@
   position: relative;
 }
 .polaroid img {
+  cursor: pointer;
   border: 10px solid #fff;
   border-bottom: 70px solid #fff;
   -webkit-box-shadow: 8px 8px 8px #888;

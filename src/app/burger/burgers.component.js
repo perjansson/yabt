@@ -9,10 +9,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var angular2_1 = require('angular2/angular2');
 var router_1 = require('angular2/router');
+var routes_1 = require('./../routes');
 var burger_service_1 = require('./burger.service');
 var BurgersComponent = (function () {
-    function BurgersComponent(burgerService) {
+    function BurgersComponent(burgerService, router) {
         this.burgerService = burgerService;
+        this.router = router;
     }
     BurgersComponent.prototype.getBurgers = function () {
         var _this = this;
@@ -23,6 +25,9 @@ var BurgersComponent = (function () {
     BurgersComponent.prototype.ngOnInit = function () {
         this.burgers = this.getBurgers();
     };
+    BurgersComponent.prototype.onSelect = function (burger) {
+        this.router.navigate([routes_1.ROUTE_NAMES.burger, { key: burger.key }]);
+    };
     BurgersComponent = __decorate([
         angular2_1.Component({
             selector: 'burgers',
@@ -31,7 +36,7 @@ var BurgersComponent = (function () {
             styleUrls: ['app/burger/burgers.component.css'],
             directives: [router_1.ROUTER_DIRECTIVES, angular2_1.CORE_DIRECTIVES, angular2_1.FORM_DIRECTIVES]
         }), 
-        __metadata('design:paramtypes', [burger_service_1.BurgerService])
+        __metadata('design:paramtypes', [burger_service_1.BurgerService, router_1.Router])
     ], BurgersComponent);
     return BurgersComponent;
 })();

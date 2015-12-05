@@ -1,9 +1,9 @@
 <nav>
   <div class="row">
     <div class="col-xs-12 text-center">
-      <a [class.active]="getLinkStyle('#/burgers')" [router-link]="[routes.burgers]">Burgers</a>
+      <button class="btn btn-primary btn-lg" [class.active]="getLinkStyle('#/burgers')" [router-link]="[routes.burgers]">Burgers</button>
       <!--a [class.active]="getLinkStyle('#/map')" [router-link]="[routes.map]">Map</a-->
-      <a [class.active]="getLinkStyle('#/about')" [router-link]="[routes.about]">About</a>
+      <button class="btn btn-primary btn-lg"[class.active]="getLinkStyle('#/about')" [router-link]="[routes.about]">About</button>
     </div>
   </div>
 </nav>
