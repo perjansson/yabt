@@ -27,7 +27,7 @@ export class BurgersComponent implements OnInit {
     this.burgers = this.getBurgers();
   }
 
-  onSelect(burger: Burger) { 
+  onSelect(burger: Burger) {
     this.router.navigate([ROUTE_NAMES.burger, { key: burger.key }]);
   }
 }

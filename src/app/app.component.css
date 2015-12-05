@@ -4,13 +4,9 @@ nav {
 nav > .row {
   margin-top: 30px;
 }
-nav a {
-  padding: 10px 20px;
-  font-size: 1.3em;
-}
-nav a.router-link-active {
-  background: #777;
-  color: #fff;
+nav button.router-link-active {
+  background-color: #286090;
+  border-color: #204d74;
 }
 main {
   margin-top: 30px;
