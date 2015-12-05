@@ -21,8 +21,8 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         angular2_1.Component({
             selector: 'my-app',
-            template: "\n    <nav>\n      <div class=\"row\">\n        <div class=\"col-xs-12 text-center\">\n          <a [class.active]=\"getLinkStyle('#/burgers')\" [router-link]=\"[routes.burgers]\">Burgers</a>\n          <a [class.active]=\"getLinkStyle('#/map')\" [router-link]=\"[routes.map]\">Map</a>\n          <a [class.active]=\"getLinkStyle('#/about')\" [router-link]=\"[routes.about]\">About</a>\n        </div>\n      </div>\n    </nav>\n    <main>\n      <div class=\"row\">\n        <div class=\"col-xs-offset-1 col-xs-10 col-lg-offset-2 col-lg-8\">\n          <router-outlet></router-outlet>\n        </div>\n      </div>\n    </main>\n  ",
-            styles: ["\n    nav > .row {\n      margin-top: 30px;\n    }\n    nav a {\n      padding: 10px 20px;\n      color: #777;\n      font-size: 1.3em;\n    }\n    nav a:hover {\n      background: #777;\n      text-decoration: none;\n      color: #fff;\n    }\n    nav a.router-link-active {\n      background: #777;\n      color: #fff;\n    }\n    main {\n      margin-top: 30px;\n    }\n  "],
+            templateUrl: 'app/app.component.html',
+            styleUrls: ['app/app.component.css'],
             directives: [router_1.ROUTER_DIRECTIVES]
         }),
         router_1.RouteConfig(routes_1.ROUTES), 

@@ -17,11 +17,32 @@
       background: #F7F7F7;
     }
     h1 {
-      font-size: 50px;
+      font-size: 30px;
       text-shadow: 4px 3px 0px #F7F7F7, 8px 6px 0px rgba(0, 0, 0, 0.15);
     }
-    h4 {
+    .container > h4 {
+      font-size: 15px;
       margin: 40px 0;
+    }
+    @media only screen and (min-width : 768px) {
+
+      h1 {
+        font-size: 50px;
+      }
+      .container > h4 {
+        font-size: 25px;
+      }
+
+    }
+    a {
+      color: #777;
+    }
+    a:hover {
+      background: #777;
+      color: #fff;
+    }
+    a, a:hover, a:active, a:visited, a:focus {
+      text-decoration: none;
     }
   </style>
 
