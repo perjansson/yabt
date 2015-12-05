@@ -9,31 +9,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var angular2_1 = require('angular2/angular2');
 var router_1 = require('angular2/router');
-var tester_service_1 = require('./tester.service');
-var AboutComponent = (function () {
-    function AboutComponent(testerService) {
-        this.testerService = testerService;
+var burger_service_1 = require('./../burger/burger.service');
+var MapComponent = (function () {
+    function MapComponent(burgerService) {
+        this.burgerService = burgerService;
     }
-    AboutComponent.prototype.getTesters = function () {
+    MapComponent.prototype.getBurgers = function () {
         var _this = this;
-        this.testers = [];
-        this.testerService.getTesters().then(function (testers) { return _this.testers = testers; });
-        return this.testers;
+        this.burgers = [];
+        this.burgerService.getBurgers().then(function (burgers) { return _this.burgers = burgers; });
+        return this.burgers;
     };
-    AboutComponent.prototype.ngOnInit = function () {
-        this.testers = this.getTesters();
+    MapComponent.prototype.ngOnInit = function () {
+        this.burgers = this.getBurgers();
     };
-    AboutComponent = __decorate([
+    MapComponent = __decorate([
         angular2_1.Component({
-            selector: 'about',
-            providers: [tester_service_1.TesterService],
-            templateUrl: 'app/about.component.html',
-            styleUrls: ['app/about.component.css'],
+            selector: 'map',
+            providers: [burger_service_1.BurgerService],
+            templateUrl: 'app/map.component.html',
             directives: [router_1.ROUTER_DIRECTIVES, angular2_1.CORE_DIRECTIVES, angular2_1.FORM_DIRECTIVES]
         }), 
-        __metadata('design:paramtypes', [tester_service_1.TesterService])
-    ], AboutComponent);
-    return AboutComponent;
+        __metadata('design:paramtypes', [burger_service_1.BurgerService])
+    ], MapComponent);
+    return MapComponent;
 })();
-exports.AboutComponent = AboutComponent;
-//# sourceMappingURL=about.component.js.map
+exports.MapComponent = MapComponent;
+//# sourceMappingURL=map.component.js.map

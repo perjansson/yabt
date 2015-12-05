@@ -1,7 +1,7 @@
 import {Route, RouteDefinition} from 'angular2/router';
-import {BurgersComponent} from './burgers.component';
-import {MapComponent} from './map.component';
-import {AboutComponent} from './about.component';
+import {BurgersComponent} from './burger/burgers.component';
+import {MapComponent} from './map/map.component';
+import {AboutComponent} from './about/about.component';
 
 export const ROUTE_NAMES = {
   burgers: 'Burgers',

@@ -18,14 +18,16 @@
   margin-bottom: 20px;
   bottom: 0px;
   font: 400 18px/1 'Inconsolata', cursive;
-  font-size: 1.2em;
   color: #000;
+}
+.polaroid p a {
+  font-size: 1.2em;
 }
 
 @media only screen and (min-width : 768px) {
 
-  .polaroid p {
-    font-size: 2em;
+  .polaroid p a {
+    font-size: 1.5em;
   }
 
 }

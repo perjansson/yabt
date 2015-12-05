@@ -27,8 +27,8 @@ var BurgersComponent = (function () {
         angular2_1.Component({
             selector: 'burgers',
             providers: [burger_service_1.BurgerService],
-            templateUrl: 'app/burgers.component.html',
-            styleUrls: ['app/burgers.component.css'],
+            templateUrl: 'app/burger/burgers.component.html',
+            styleUrls: ['app/burger/burgers.component.css'],
             directives: [router_1.ROUTER_DIRECTIVES, angular2_1.CORE_DIRECTIVES, angular2_1.FORM_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [burger_service_1.BurgerService])

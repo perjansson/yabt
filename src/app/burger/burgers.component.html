@@ -1,0 +1,8 @@
+<div class="row burgers">
+    <div *ng-for="#burger of burgers; #i=index" class="col-sm-12 burger polaroid" [hidden]="burger.key===''" id="{{burger.key}}">
+      <p>
+        <a href="{{ burger.url }}" target="_blank">{{ i+1 + '. ' + burger.name }}</a>
+      </p>
+      <img src="img/{{ burger.key + '.jpg' }}" class="img-responsive" />
+    </div>
+</div>

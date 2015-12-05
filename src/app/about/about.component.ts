@@ -1,14 +1,14 @@
 import {bootstrap, Component, OnInit, CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/angular2';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
-import {ROUTE_NAMES, ROUTES} from './routes';
+import {ROUTE_NAMES, ROUTES} from './../routes';
 import {Tester} from './tester';
 import {TesterService} from './tester.service';
 
 @Component({
   selector: 'about',
   providers: [TesterService],
-  templateUrl: 'app/about.component.html',
-  styleUrls: ['app/about.component.css'],
+  templateUrl: 'app/about/about.component.html',
+  styleUrls: ['app/about/about.component.css'],
   directives: [ROUTER_DIRECTIVES, CORE_DIRECTIVES, FORM_DIRECTIVES]
 })
 

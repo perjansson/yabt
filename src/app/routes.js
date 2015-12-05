@@ -1,7 +1,7 @@
 var router_1 = require('angular2/router');
-var burgers_component_1 = require('./burgers.component');
-var map_component_1 = require('./map.component');
-var about_component_1 = require('./about.component');
+var burgers_component_1 = require('./burger/burgers.component');
+var map_component_1 = require('./map/map.component');
+var about_component_1 = require('./about/about.component');
 exports.ROUTE_NAMES = {
     burgers: 'Burgers',
     map: 'Map',

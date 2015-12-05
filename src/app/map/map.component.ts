@@ -1,8 +1,8 @@
 import {bootstrap, Component, OnInit, CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/angular2';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
-import {ROUTE_NAMES, ROUTES} from './routes';
-import {Burger} from './burger';
-import {BurgerService} from './burger.service';
+import {ROUTE_NAMES, ROUTES} from './../routes';
+import {Burger} from './../burger/burger';
+import {BurgerService} from './../burger/burger.service';
 
 @Component({
   selector: 'map',
