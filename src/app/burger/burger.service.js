@@ -17,7 +17,11 @@ var BurgerService = (function () {
     };
     BurgerService.prototype.getBurger = function (key) {
         return Promise.resolve(burgers_data_1.BURGERS)
-            .then(function (burgers) { return burgers.filter(function (h) { return h.key === key; })[0]; });
+            .then(function (burgers) { return burgers.filter(function (b) { return b.key === key; })[0]; });
+    };
+    BurgerService.prototype.getRanking = function (key) {
+        return Promise.resolve(burgers_data_1.BURGERS)
+            .then(function (burgers) { return burgers.map(function (b) { return b.key; }).indexOf(key) + 1; });
     };
     BurgerService = __decorate([
         angular2_1.Injectable(), 

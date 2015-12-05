@@ -1,3 +1,13 @@
+.burger h4 {
+  display: inline;
+}
+
+.burger .badge {
+  font-size: 7em;
+  margin-bottom: 20px;
+  background-color: #000;
+}
+
 .burger img {
   margin: 20px 0;
 }

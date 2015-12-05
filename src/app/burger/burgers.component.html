@@ -1,5 +1,5 @@
 <div class="row burgers">
-    <div *ng-for="#burger of burgers; #i=index" class="col-sm-12 burger polaroid" [hidden]="burger.key===''" id="{{burger.key}}">
+    <div *ng-for="#burger of burgers; #i=index" class="burger polaroid col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-8" [hidden]="burger.key===''" id="{{burger.key}}">
       <p>
         <a href="{{ burger.url }}" target="_blank">{{ i+1 + '. ' + burger.name }}</a>
       </p>

@@ -11,6 +11,7 @@ import {ROUTE_NAMES} from './../routes';
 })
 export class BurgerComponent implements OnInit {
   public burger: Burger;
+  public ranking: number;
 
   constructor(private burgerService: BurgerService, private routeParams: RouteParams, private router: Router) {
   }
@@ -19,6 +20,7 @@ export class BurgerComponent implements OnInit {
     if (!this.burger) {
       let key = this.routeParams.get('key');
       this.burgerService.getBurger(key).then(burger => this.burger = burger);
+      this.burgerService.getRanking(key).then(ranking => this.ranking = ranking);
     }
   }
 

@@ -10,6 +10,11 @@ export class BurgerService {
 
 	getBurger(key: string) {
     return Promise.resolve(BURGERS)
-      .then(burgers => burgers.filter(h => h.key === key)[0]);
+      .then(burgers => burgers.filter(b => b.key === key)[0]);
+	}
+
+	getRanking(key: string) {
+		return Promise.resolve(BURGERS)
+			.then(burgers => burgers.map(function(b) {return b.key; }).indexOf(key) + 1)
 	}
 }

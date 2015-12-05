@@ -22,6 +22,7 @@ var BurgerComponent = (function () {
         if (!this.burger) {
             var key = this.routeParams.get('key');
             this.burgerService.getBurger(key).then(function (burger) { return _this.burger = burger; });
+            this.burgerService.getRanking(key).then(function (ranking) { return _this.ranking = ranking; });
         }
     };
     BurgerComponent.prototype.goBackToBurgers = function () {
