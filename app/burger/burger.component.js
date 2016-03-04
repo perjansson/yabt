@@ -44,8 +44,8 @@ System.register(['angular2/core', 'angular2/router', './burger.service'], functi
                 BurgerComponent = __decorate([
                     core_1.Component({
                         selector: 'burger',
-                        templateUrl: 'app/burger/burger.component.html',
-                        styleUrls: ['app/burger/burger.component.css'],
+                        template: "\n    <div class=\"row\" *ngIf=\"burger\" class=\"burger row\">\n    \t<div class=\"col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-8\">\n    \t\t\t<span class=\"badge\">{{ranking}}</span>\n    \t</div>\n    \t<div class=\"col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-8\">\n    \t\t<h4>Mmm... sugen p\u00E5 en burgare fr\u00E5n {{burger.name}}?</h4>\n    \t\t<a href=\"{{ burger.url }}\" target=\"_blank\">Kolla in deras hemsida...</a>\n    \t</div>\n    \t<div class=\"col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-8\">\n    \t\t<img src=\"img/{{ burger.key + '.jpg' }}\" (click)=\"onSelect(burger)\" class=\"img-responsive img-circle\" />\n    \t</div>\n    \t<div class=\"col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-8\">\n    \t</div>\n    \t<div class=\"col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-8 hidden\">\n    \t\t<button (click)=\"goBackToBurgers()\" class=\"btn btn-default\">Tillbaka</button>\n    \t</div>\n    </div>\n  ",
+                        styles: ["\n    .burger h4 {\n      display: inline;\n    }\n\n    .burger .badge {\n      font-size: 7em;\n      margin-bottom: 20px;\n      background-color: #000;\n    }\n\n    .burger img {\n      margin: 20px 0;\n    }\n\n    button {\n      margin: 20px 0;\n    }\n  "],
                     }), 
                     __metadata('design:paramtypes', [burger_service_1.BurgerService, router_1.RouteParams, router_1.Router])
                 ], BurgerComponent);
