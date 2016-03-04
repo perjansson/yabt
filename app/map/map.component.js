@@ -44,7 +44,7 @@ System.register(['angular2/core', 'angular2/common', 'angular2/router', './../bu
                     core_1.Component({
                         selector: 'map',
                         providers: [burger_service_1.BurgerService],
-                        templateUrl: 'app/map.component.html',
+                        template: "\n    <i>Map...</i>\n  ",
                         directives: [router_1.ROUTER_DIRECTIVES, common_1.CORE_DIRECTIVES, common_1.FORM_DIRECTIVES]
                     }), 
                     __metadata('design:paramtypes', [burger_service_1.BurgerService])

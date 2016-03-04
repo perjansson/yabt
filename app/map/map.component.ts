@@ -7,7 +7,9 @@ import {BurgerService} from './../burger/burger.service';
 @Component({
   selector: 'map',
   providers: [BurgerService],
-  templateUrl: 'app/map.component.html',
+  template: `
+    <i>Map...</i>
+  `,
   directives: [ROUTER_DIRECTIVES, CORE_DIRECTIVES, FORM_DIRECTIVES]
 })
 

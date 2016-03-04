@@ -5,32 +5,13 @@ import {BurgerService} from './burger.service';
 
 @Component({
   selector: 'burger',
-  template: `
-    <div class="row" *ngIf="burger" class="burger row">
-    	<div class="col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-8">
-    			<span class="badge">{{ranking}}</span>
-    	</div>
-    	<div class="col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-8">
-    		<h4>Mmm... sugen på en burgare från {{burger.name}}?</h4>
-    		<a href="{{ burger.url }}" target="_blank">Kolla in deras hemsida...</a>
-    	</div>
-    	<div class="col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-8">
-    		<img src="img/{{ burger.key + '.jpg' }}" (click)="onSelect(burger)" class="img-responsive img-circle" />
-    	</div>
-    	<div class="col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-8">
-    	</div>
-    	<div class="col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-8 hidden">
-    		<button (click)="goBackToBurgers()" class="btn btn-default">Tillbaka</button>
-    	</div>
-    </div>
-  `,
   styles: [`
     .burger h4 {
       display: inline;
     }
 
     .burger .badge {
-      font-size: 7em;
+      font-size: 5em;
       margin-bottom: 20px;
       background-color: #000;
     }
@@ -43,6 +24,25 @@ import {BurgerService} from './burger.service';
       margin: 20px 0;
     }
   `],
+  template: `
+    <div class="row" *ngIf="burger" class="burger row">
+    	<div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
+    			<span class="badge">{{ranking}}</span>
+    	</div>
+    	<div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
+    		<h4>Mmm... sugen på en burgare från {{burger.name}}?</h4>
+    		<a href="{{ burger.url }}" target="_blank">Kolla in deras hemsida...</a>
+    	</div>
+    	<div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
+    		<img src="img/{{ burger.key + '.jpg' }}" (click)="onSelect(burger)" class="img-responsive img-circle" />
+    	</div>
+    	<div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
+    	</div>
+    	<div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6 hidden">
+    		<button (click)="goBackToBurgers()" class="btn btn-default">Tillbaka</button>
+    	</div>
+    </div>
+  `,
 })
 export class BurgerComponent implements OnInit {
   public burger: Burger;

@@ -7,16 +7,6 @@ import {BurgerService} from './burger.service';
 @Component({
   selector: 'burgers',
   providers: [BurgerService],
-  template: `
-    <div class="row burgers">
-        <div *ngFor="#burger of burgers; #i=index" class="burger polaroid col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-8" [hidden]="burger.key===''" id="{{burger.key}}">
-          <p>
-            <a href="{{ burger.url }}" target="_blank">{{ i+1 + '. ' + burger.name }}</a>
-          </p>
-          <img src="img/{{ burger.key + '.jpg' }}" [routerLink]="['Burger', { key: burger.key }]" class="img-responsive" />
-        </div>
-    </div>
-  `,
   styles: [`
     .burger {
       margin-bottom: 40px;
@@ -53,6 +43,16 @@ import {BurgerService} from './burger.service';
 
     }
     `],
+  template: `
+    <div class="row burgers">
+        <div *ngFor="#burger of burgers; #i=index" class="burger polaroid col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6" [hidden]="burger.key===''" id="{{burger.key}}">
+          <p>
+            <a href="{{ burger.url }}" target="_blank">{{ i+1 + '. ' + burger.name }}</a>
+          </p>
+          <img src="img/{{ burger.key + '.jpg' }}" [routerLink]="['Burger', { key: burger.key }]" class="img-responsive" />
+        </div>
+    </div>
+  `,
   directives: [ROUTER_DIRECTIVES, CORE_DIRECTIVES, FORM_DIRECTIVES]
 })
 
