@@ -6,7 +6,14 @@ export function moduleRef(moduleUrl): string {
   return `#MODULE[${moduleUrl}]`;
 }
 
+/**
+ * Represents generated source code with module references. Internal to the Angular compiler.
+ */
 export class SourceModule {
+  static getSourceWithoutImports(sourceWithModuleRefs: string): string {
+    return StringWrapper.replaceAllMapped(sourceWithModuleRefs, MODULE_REGEXP, (match) => '');
+  }
+
   constructor(public moduleUrl: string, public sourceWithModuleRefs: string) {}
 
   getSourceWithImports(): SourceWithImports {
@@ -39,6 +46,9 @@ export class SourceExpressions {
   constructor(public declarations: string[], public expressions: string[]) {}
 }
 
+/**
+ * Represents generated source code with imports. Internal to the Angular compiler.
+ */
 export class SourceWithImports {
   constructor(public source: string, public imports: string[][]) {}
 }

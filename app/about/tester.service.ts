@@ -1,4 +1,4 @@
-import {Injectable} from 'angular2/angular2';
+import {Injectable} from 'angular2/core';
 import {TESTERS} from './testers.data';
 import {Tester} from './tester';
 

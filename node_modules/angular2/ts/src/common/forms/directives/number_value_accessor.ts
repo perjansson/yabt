@@ -11,12 +11,12 @@ const NUMBER_VALUE_ACCESSOR = CONST_EXPR(new Provider(
  *
  *  ### Example
  *  ```
- *  <input type="number" [(ng-model)]="age">
+ *  <input type="number" [(ngModel)]="age">
  *  ```
  */
 @Directive({
   selector:
-      'input[type=number][ng-control],input[type=number][ng-form-control],input[type=number][ng-model]',
+      'input[type=number][ngControl],input[type=number][ngFormControl],input[type=number][ngModel]',
   host: {
     '(change)': 'onChange($event.target.value)',
     '(input)': 'onChange($event.target.value)',
@@ -25,13 +25,13 @@ const NUMBER_VALUE_ACCESSOR = CONST_EXPR(new Provider(
   bindings: [NUMBER_VALUE_ACCESSOR]
 })
 export class NumberValueAccessor implements ControlValueAccessor {
-  onChange = (_) => {};
+  onChange = (_: any) => {};
   onTouched = () => {};
 
   constructor(private _renderer: Renderer, private _elementRef: ElementRef) {}
 
   writeValue(value: number): void {
-    this._renderer.setElementProperty(this._elementRef, 'value', value);
+    this._renderer.setElementProperty(this._elementRef.nativeElement, 'value', value);
   }
 
   registerOnChange(fn: (_: number) => void): void {

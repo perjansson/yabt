@@ -22,8 +22,8 @@ const SELECT_VALUE_ACCESSOR = CONST_EXPR(new Provider(
  * ### Example
  *
  * ```
- * <select ng-control="city">
- *   <option *ng-for="#c of cities" [value]="c"></option>
+ * <select ngControl="city">
+ *   <option *ngFor="#c of cities" [value]="c"></option>
  * </select>
  * ```
  */
@@ -35,17 +35,13 @@ export class NgSelectOption {
  * The accessor for writing a value and listening to changes on a select element.
  */
 @Directive({
-  selector: 'select[ng-control],select[ng-form-control],select[ng-model]',
-  host: {
-    '(change)': 'onChange($event.target.value)',
-    '(input)': 'onChange($event.target.value)',
-    '(blur)': 'onTouched()'
-  },
+  selector: 'select[ngControl],select[ngFormControl],select[ngModel]',
+  host: {'(input)': 'onChange($event.target.value)', '(blur)': 'onTouched()'},
   bindings: [SELECT_VALUE_ACCESSOR]
 })
 export class SelectControlValueAccessor implements ControlValueAccessor {
   value: string;
-  onChange = (_) => {};
+  onChange = (_: any) => {};
   onTouched = () => {};
 
   constructor(private _renderer: Renderer, private _elementRef: ElementRef,
@@ -55,7 +51,7 @@ export class SelectControlValueAccessor implements ControlValueAccessor {
 
   writeValue(value: any): void {
     this.value = value;
-    this._renderer.setElementProperty(this._elementRef, 'value', value);
+    this._renderer.setElementProperty(this._elementRef.nativeElement, 'value', value);
   }
 
   registerOnChange(fn: () => any): void { this.onChange = fn; }

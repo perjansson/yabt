@@ -1,26 +1,35 @@
-import {Component} from 'angular2/angular2';
-import {RouteConfig, Location, ROUTER_DIRECTIVES} from 'angular2/router';
-import {ROUTE_NAMES, ROUTES} from './routes';
+import {Component} from 'angular2/core';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Location} from 'angular2/router';
+import {BurgerService} from './burger/burger.service';
+import {BurgersComponent} from './burger/burgers.component';
+import {BurgerComponent} from './burger/burger.component';
+import {MapComponent} from './map/map.component';
+import {AboutComponent} from './about/about.component';
 
 @Component({
   selector: 'my-app',
   templateUrl: 'app/app.component.html',
   styleUrls: ['app/app.component.css'],
-  directives: [ROUTER_DIRECTIVES]
+  directives: [ROUTER_DIRECTIVES],
+  providers: [BurgerService, ROUTER_PROVIDERS, Location]
 })
 
-@RouteConfig(ROUTES)
+@RouteConfig([
+  { path: '/burgers', name: 'Burgers', component: BurgersComponent, useAsDefault: true },
+  { path: '/burgers/:key', name: 'Burger', component: BurgerComponent },
+  { path: '/map', name: 'Map', component: MapComponent },
+  { path: '/about', name: 'About', component: AboutComponent }
+])
 
 export class AppComponent {
 
-  routes = ROUTE_NAMES;
   location: Location;
 
   constructor(location: Location) {
         this.location = location;
     }
 
-  getLinkStyle(path) {
-        return this.location.path() === path;
+  getLinkStyle(path: String) {
+        //return this.location.path() === path;
     }
 }

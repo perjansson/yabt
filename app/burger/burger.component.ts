@@ -1,8 +1,7 @@
-import {Component, OnInit} from 'angular2/angular2';
+import {Component, OnInit} from 'angular2/core';
 import {Router, RouteParams} from 'angular2/router';
 import {Burger} from './burger';
 import {BurgerService} from './burger.service';
-import {ROUTE_NAMES} from './../routes';
 
 @Component({
   selector: 'burger',
@@ -25,6 +24,6 @@ export class BurgerComponent implements OnInit {
   }
 
   goBackToBurgers() {
-    this.router.navigate([ROUTE_NAMES.burgers]);
+    this.router.navigate(['burgers']);
   }
 }

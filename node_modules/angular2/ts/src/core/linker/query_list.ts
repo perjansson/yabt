@@ -11,7 +11,7 @@ import {Observable, EventEmitter} from 'angular2/src/facade/async';
  *
  * Implements an iterable interface, therefore it can be used in both ES6
  * javascript `for (var i of items)` loops as well as in Angular templates with
- * `*ng-for="#i of myList"`.
+ * `*ngFor="#i of myList"`.
  *
  * Changes can be observed by subscribing to the changes `Observable`.
  *
@@ -50,6 +50,11 @@ export class QueryList<T> {
    * returns a reduced value.
    */
   reduce<U>(fn: (acc: U, item: T) => U, init: U): U { return this._results.reduce(fn, init); }
+
+  /**
+   * executes function for each element in a query.
+   */
+  forEach(fn: (item: T) => void): void { this._results.forEach(fn); }
 
   /**
    * converts QueryList into an array
