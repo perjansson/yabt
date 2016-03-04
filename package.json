@@ -14,8 +14,8 @@
     "typescript": "^1.6.2"
   },
   "scripts": {
-    "tsc": "tsc -p src -w",
-    "start": "live-server --open=src"
+    "tsc": "tsc -w",
+    "start": "live-server"
   },
   "repository": {
     "type": "git",
