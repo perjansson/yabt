@@ -42,7 +42,7 @@ System.register(['angular2/core', 'angular2/common', 'angular2/router', './burge
                     this.burgers = this.getBurgers();
                 };
                 BurgersComponent.prototype.onSelect = function (burger) {
-                    this.router.navigate(['burger', { key: burger.key }]);
+                    this.router.navigate(['Burger', { key: burger.key }]);
                 };
                 BurgersComponent = __decorate([
                     core_1.Component({

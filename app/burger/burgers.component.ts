@@ -72,6 +72,6 @@ export class BurgersComponent implements OnInit {
   }
 
   onSelect(burger: Burger) {
-    this.router.navigate(['burger', { key: burger.key }]);
+    this.router.navigate(['Burger', { key: burger.key }]);
   }
 }
