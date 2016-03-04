@@ -4,8 +4,11 @@ import {ListWrapper} from 'angular2/src/facade/collection';
 import {ChangeDetectorRef} from '../change_detector_ref';
 import {Provider, SkipSelfMetadata, OptionalMetadata, Injectable} from 'angular2/src/core/di';
 
+/**
+ * A differ that tracks changes made to an object over time.
+ */
 export interface KeyValueDiffer {
-  diff(object: Object);
+  diff(object: any);
   onDestroy();
 }
 
@@ -13,7 +16,7 @@ export interface KeyValueDiffer {
  * Provides a factory for {@link KeyValueDiffer}.
  */
 export interface KeyValueDifferFactory {
-  supports(objects: Object): boolean;
+  supports(objects: any): boolean;
   create(cdRef: ChangeDetectorRef): KeyValueDiffer;
 }
 

@@ -1,6 +1,6 @@
-import {bootstrap, Component, OnInit, CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/angular2';
+import {Component, OnInit} from 'angular2/core';
+import {CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/common';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
-import {ROUTE_NAMES, ROUTES} from './../routes';
 import {Tester} from './tester';
 import {TesterService} from './tester.service';
 

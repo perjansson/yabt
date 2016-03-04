@@ -20,7 +20,7 @@
       Three software developers that love to code and eat burgers.
     </p>
     <div class="col-sm-12 testers">
-      <div *ng-for="#tester of testers" [hidden]="tester.key===''" id="{{tester.key}}">
+      <div *ngFor="#tester of testers" [hidden]="tester.key===''" id="{{tester.key}}">
         <a href="{{ tester.url }}" target="_blank">{{ tester.name }}</a>
       </div>
     </div>
