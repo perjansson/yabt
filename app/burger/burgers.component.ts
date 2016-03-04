@@ -13,7 +13,7 @@ import {BurgerService} from './burger.service';
           <p>
             <a href="{{ burger.url }}" target="_blank">{{ i+1 + '. ' + burger.name }}</a>
           </p>
-          <img src="img/{{ burger.key + '.jpg' }}" (click)="onSelect(burger, i+1)" class="img-responsive" />
+          <img src="img/{{ burger.key + '.jpg' }}" [routerLink]="['Burger', { key: burger.key }]" class="img-responsive" />
         </div>
     </div>
   `,
@@ -59,7 +59,7 @@ import {BurgerService} from './burger.service';
 export class BurgersComponent implements OnInit {
   public burgers: Burger[];
 
-  constructor(private burgerService: BurgerService, private router: Router) { }
+  constructor(private burgerService: BurgerService) { }
 
   getBurgers() {
     this.burgers = [];
@@ -69,9 +69,5 @@ export class BurgersComponent implements OnInit {
 
   ngOnInit() {
     this.burgers = this.getBurgers();
-  }
-
-  onSelect(burger: Burger) {
-    this.router.navigate(['Burger', { key: burger.key }]);
   }
 }
