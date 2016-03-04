@@ -41,7 +41,7 @@ System.register(['angular2/core', 'angular2/router', './burger/burger.service', 
                     this.location = location;
                 }
                 AppComponent.prototype.getLinkStyle = function (path) {
-                    //return this.location.path() === path;
+                    return this.location.path() === path;
                 };
                 AppComponent = __decorate([
                     core_1.Component({

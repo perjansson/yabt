@@ -30,6 +30,6 @@ export class AppComponent {
     }
 
   getLinkStyle(path: String) {
-        //return this.location.path() === path;
+        return this.location.path() === path;
     }
 }
