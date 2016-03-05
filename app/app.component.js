@@ -1,4 +1,4 @@
-System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router', './burger/burger.service', './burger/burgers.component', './burger/burger-detail.component', './map/map.component', './about/about.component'], function(exports_1, context_1) {
+System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router', './burger/burger.service', './burger/burger-list.component', './burger/burger-detail.component', './map/map.component', './about/about.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router'
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var browser_1, core_1, router_1, burger_service_1, burgers_component_1, burger_detail_component_1, map_component_1, about_component_1;
+    var browser_1, core_1, router_1, burger_service_1, burger_list_component_1, burger_detail_component_1, map_component_1, about_component_1;
     var AppComponent;
     return {
         setters:[
@@ -26,8 +26,8 @@ System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router'
             function (burger_service_1_1) {
                 burger_service_1 = burger_service_1_1;
             },
-            function (burgers_component_1_1) {
-                burgers_component_1 = burgers_component_1_1;
+            function (burger_list_component_1_1) {
+                burger_list_component_1 = burger_list_component_1_1;
             },
             function (burger_detail_component_1_1) {
                 burger_detail_component_1 = burger_detail_component_1_1;
@@ -56,7 +56,7 @@ System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router'
                         providers: [burger_service_1.BurgerService, router_1.ROUTER_PROVIDERS, router_1.Location]
                     }),
                     router_1.RouteConfig([
-                        { path: '/burgers', name: 'Burgers', component: burgers_component_1.BurgersComponent },
+                        { path: '/burgers', name: 'Burgers', component: burger_list_component_1.BurgerListComponent },
                         { path: '/burgers/:key', name: 'Burger', component: burger_detail_component_1.BurgerDetailComponent },
                         { path: '/map', name: 'Map', component: map_component_1.MapComponent },
                         { path: '/about', name: 'About', component: about_component_1.AboutComponent }
@@ -69,7 +69,7 @@ System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router'
             browser_1.bootstrap(AppComponent, [
                 router_1.ROUTER_PROVIDERS,
                 core_1.provide(router_1.LocationStrategy, { useClass: router_1.HashLocationStrategy }),
-                core_1.provide(router_1.APP_BASE_HREF, { useValue: '' })
+                core_1.provide(router_1.APP_BASE_HREF, { useValue: '/' })
             ]);
         }
     }
