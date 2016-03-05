@@ -1,5 +1,6 @@
-import {Component} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Location} from 'angular2/router';
+import {bootstrap} from 'angular2/platform/browser';
+import {provide, Component} from 'angular2/core';
+import {LocationStrategy, APP_BASE_HREF, HashLocationStrategy, RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Location} from 'angular2/router';
 import {BurgerService} from './burger/burger.service';
 import {BurgersComponent} from './burger/burgers.component';
 import {BurgerComponent} from './burger/burger.component';
@@ -46,7 +47,7 @@ import {AboutComponent} from './about/about.component';
 })
 
 @RouteConfig([
-  { path: '/burgers', name: 'Burgers', component: BurgersComponent, useAsDefault: true },
+  { path: '/burgers', name: 'Burgers', component: BurgersComponent },
   { path: '/burgers/:key', name: 'Burger', component: BurgerComponent },
   { path: '/map', name: 'Map', component: MapComponent },
   { path: '/about', name: 'About', component: AboutComponent }
@@ -58,9 +59,16 @@ export class AppComponent {
 
   constructor(location: Location) {
     this.location = location;
+    location.go('/burgers');
   }
 
   getLinkStyle(path: String) {
     return this.location.path() === path;
   }
 }
+
+bootstrap(AppComponent, [
+  ROUTER_PROVIDERS,
+  provide(LocationStrategy, {useClass: HashLocationStrategy}),
+  provide(APP_BASE_HREF, {useValue : '/' })
+]);
