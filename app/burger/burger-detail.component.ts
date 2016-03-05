@@ -11,8 +11,8 @@ import {BurgerService} from './burger.service';
     }
 
     .burger-detail .badge {
-      font-size: 5em;
-      margin-bottom: 20px;
+      font-size: 4em;
+      margin-right: 20px;
       background-color: #000;
     }
 
@@ -27,10 +27,9 @@ import {BurgerService} from './burger.service';
   template: `
     <div class="row" *ngIf="burger" class="burger-detail row">
     	<div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
-    			<span class="badge">{{ranking}}</span>
-    	</div>
-    	<div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
-    		<h4>Mmm... sugen på en burgare från {{burger.name}}?</h4>
+        <header>
+  			   <span class="badge">{{ranking}}</span> <h4>Mmm... sugen på en burgare från {{burger.name}}?</h4>
+        </header>
     		<a href="{{ burger.url }}" target="_blank">Kolla in deras hemsida...</a>
     	</div>
     	<div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">

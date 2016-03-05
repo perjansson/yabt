@@ -1,4 +1,4 @@
-import {Component, Input} from 'angular2/core';
+import {Component, EventEmitter, Input, Output} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import {Burger} from './burger';
 
@@ -45,7 +45,7 @@ import {Burger} from './burger';
       <p>
         <a href="{{ burger.url }}" target="_blank">{{ rank + '. ' + burger.name }}</a>
       </p>
-      <img src="/img/{{ burger.key + '.jpg' }}" [routerLink]="['Burger', { key: burger.key }]" class="img-responsive" />
+      <img src="/img/{{ burger.key + '.jpg' }}" (click)=burgerClick(burger) class="img-responsive" />
     </div>
   `,
   directives: [ROUTER_DIRECTIVES]
@@ -53,4 +53,9 @@ import {Burger} from './burger';
 export class BurgerPreviewComponent {
   @Input() burger: Burger;
   @Input() rank: Number;
+  @Output() selected = new EventEmitter<Burger>();
+
+  burgerClick(burger: Burger) {
+    this.selected.emit(burger);
+  }
 }

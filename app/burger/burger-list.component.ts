@@ -11,7 +11,7 @@ import {BurgerService} from './burger.service';
   template: `
     <div class="row">
       <div class="col-xs-12">
-        <burger-preview [burger]="burger" [rank]="i+1" *ngFor="#burger of burgers; #i=index"></burger-preview>
+        <burger-preview [burger]="burger" [rank]="i+1" (selected)=onBurgerSelected($event) *ngFor="#burger of burgers; #i=index"></burger-preview>
       </div>
     </div>
   `,
@@ -21,7 +21,11 @@ import {BurgerService} from './burger.service';
 export class BurgerListComponent implements OnInit {
   public burgers: Burger[];
 
-  constructor(private burgerService: BurgerService) { }
+  constructor(private burgerService: BurgerService, private router: Router) { }
+
+  ngOnInit() {
+    this.burgers = this.getBurgers();
+  }
 
   getBurgers() {
     this.burgers = [];
@@ -29,7 +33,8 @@ export class BurgerListComponent implements OnInit {
     return this.burgers;
   }
 
-  ngOnInit() {
-    this.burgers = this.getBurgers();
+  onBurgerSelected(burger: Burger) {
+    console.log('Burger ' + burger.key + ' selected');
+    this.router.navigate(['Burger', { key: burger.key }]);
   }
 }

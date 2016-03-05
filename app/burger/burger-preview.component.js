@@ -26,7 +26,11 @@ System.register(['angular2/core', 'angular2/router', './burger'], function(expor
         execute: function() {
             BurgerPreviewComponent = (function () {
                 function BurgerPreviewComponent() {
+                    this.selected = new core_1.EventEmitter();
                 }
+                BurgerPreviewComponent.prototype.burgerClick = function (burger) {
+                    this.selected.emit(burger);
+                };
                 __decorate([
                     core_1.Input(), 
                     __metadata('design:type', burger_1.Burger)
@@ -35,11 +39,15 @@ System.register(['angular2/core', 'angular2/router', './burger'], function(expor
                     core_1.Input(), 
                     __metadata('design:type', Number)
                 ], BurgerPreviewComponent.prototype, "rank", void 0);
+                __decorate([
+                    core_1.Output(), 
+                    __metadata('design:type', Object)
+                ], BurgerPreviewComponent.prototype, "selected", void 0);
                 BurgerPreviewComponent = __decorate([
                     core_1.Component({
                         selector: 'burger-preview',
                         styles: ["\n    .burger {\n      margin-bottom: 40px;\n    }\n    .polaroid {\n      position: relative;\n    }\n    .polaroid img {\n      cursor: pointer;\n      border: 10px solid #fff;\n      border-bottom: 70px solid #fff;\n      -webkit-box-shadow: 8px 8px 8px #888;\n      -moz-box-shadow: 8px 8px 8px #888;\n      box-shadow: 8px 8px 8px #888;\n    }\n    .polaroid p {\n      position: absolute;\n      text-align: center;\n      margin-left: 30px;\n      margin-bottom: 20px;\n      bottom: 0px;\n      font: 400 18px/1 'Inconsolata', cursive;\n      color: #000;\n    }\n    .polaroid p a {\n      font-size: 1.2em;\n    }\n\n    @media only screen and (min-width : 768px) {\n\n      .polaroid p a {\n        font-size: 1.5em;\n      }\n\n    }\n  "],
-                        template: "\n    <div class=\"burger polaroid col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6\" [hidden]=\"burger.key===''\" id=\"{{burger.key}}\">\n      <p>\n        <a href=\"{{ burger.url }}\" target=\"_blank\">{{ rank + '. ' + burger.name }}</a>\n      </p>\n      <img src=\"/img/{{ burger.key + '.jpg' }}\" [routerLink]=\"['Burger', { key: burger.key }]\" class=\"img-responsive\" />\n    </div>\n  ",
+                        template: "\n    <div class=\"burger polaroid col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6\" [hidden]=\"burger.key===''\" id=\"{{burger.key}}\">\n      <p>\n        <a href=\"{{ burger.url }}\" target=\"_blank\">{{ rank + '. ' + burger.name }}</a>\n      </p>\n      <img src=\"/img/{{ burger.key + '.jpg' }}\" (click)=burgerClick(burger) class=\"img-responsive\" />\n    </div>\n  ",
                         directives: [router_1.ROUTER_DIRECTIVES]
                     }), 
                     __metadata('design:paramtypes', [])
