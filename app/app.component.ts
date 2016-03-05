@@ -70,5 +70,5 @@ export class AppComponent {
 bootstrap(AppComponent, [
   ROUTER_PROVIDERS,
   provide(LocationStrategy, {useClass: HashLocationStrategy}),
-  provide(APP_BASE_HREF, {useValue : '/yabt' })
+  provide(APP_BASE_HREF, {useValue : '' })
 ]);
