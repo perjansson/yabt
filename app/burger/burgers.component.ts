@@ -49,7 +49,7 @@ import {BurgerService} from './burger.service';
           <p>
             <a href="{{ burger.url }}" target="_blank">{{ i+1 + '. ' + burger.name }}</a>
           </p>
-          <img src="img/{{ burger.key + '.jpg' }}" [routerLink]="['Burger', { key: burger.key }]" class="img-responsive" />
+          <img src="/img/{{ burger.key + '.jpg' }}" [routerLink]="['Burger', { key: burger.key }]" class="img-responsive" />
         </div>
     </div>
   `,

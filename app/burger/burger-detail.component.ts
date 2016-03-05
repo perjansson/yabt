@@ -4,19 +4,19 @@ import {Burger} from './burger';
 import {BurgerService} from './burger.service';
 
 @Component({
-  selector: 'burger',
+  selector: 'burger-detail',
   styles: [`
-    .burger h4 {
+    .burger-detail h4 {
       display: inline;
     }
 
-    .burger .badge {
+    .burger-detail .badge {
       font-size: 5em;
       margin-bottom: 20px;
       background-color: #000;
     }
 
-    .burger img {
+    .burger-detail img {
       margin: 20px 0;
     }
 
@@ -25,7 +25,7 @@ import {BurgerService} from './burger.service';
     }
   `],
   template: `
-    <div class="row" *ngIf="burger" class="burger row">
+    <div class="row" *ngIf="burger" class="burger-detail row">
     	<div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
     			<span class="badge">{{ranking}}</span>
     	</div>
@@ -34,7 +34,7 @@ import {BurgerService} from './burger.service';
     		<a href="{{ burger.url }}" target="_blank">Kolla in deras hemsida...</a>
     	</div>
     	<div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
-    		<img src="img/{{ burger.key + '.jpg' }}" (click)="onSelect(burger)" class="img-responsive img-circle" />
+    		<img src="/img/{{ burger.key + '.jpg' }}" (click)="onSelect(burger)" class="img-responsive img-circle" />
     	</div>
     	<div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
     	</div>
@@ -44,7 +44,7 @@ import {BurgerService} from './burger.service';
     </div>
   `,
 })
-export class BurgerComponent implements OnInit {
+export class BurgerDetailComponent implements OnInit {
   public burger: Burger;
   public ranking: number;
 

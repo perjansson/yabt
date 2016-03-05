@@ -11,7 +11,7 @@ System.register(['angular2/core', 'angular2/router', './burger.service'], functi
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, router_1, burger_service_1;
-    var BurgerComponent;
+    var BurgerDetailComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -24,13 +24,13 @@ System.register(['angular2/core', 'angular2/router', './burger.service'], functi
                 burger_service_1 = burger_service_1_1;
             }],
         execute: function() {
-            BurgerComponent = (function () {
-                function BurgerComponent(burgerService, routeParams, router) {
+            BurgerDetailComponent = (function () {
+                function BurgerDetailComponent(burgerService, routeParams, router) {
                     this.burgerService = burgerService;
                     this.routeParams = routeParams;
                     this.router = router;
                 }
-                BurgerComponent.prototype.ngOnInit = function () {
+                BurgerDetailComponent.prototype.ngOnInit = function () {
                     var _this = this;
                     if (!this.burger) {
                         var key = this.routeParams.get('key');
@@ -38,21 +38,21 @@ System.register(['angular2/core', 'angular2/router', './burger.service'], functi
                         this.burgerService.getRanking(key).then(function (ranking) { return _this.ranking = ranking; });
                     }
                 };
-                BurgerComponent.prototype.goBackToBurgers = function () {
+                BurgerDetailComponent.prototype.goBackToBurgers = function () {
                     this.router.navigate(['burgers']);
                 };
-                BurgerComponent = __decorate([
+                BurgerDetailComponent = __decorate([
                     core_1.Component({
-                        selector: 'burger',
-                        styles: ["\n    .burger h4 {\n      display: inline;\n    }\n\n    .burger .badge {\n      font-size: 5em;\n      margin-bottom: 20px;\n      background-color: #000;\n    }\n\n    .burger img {\n      margin: 20px 0;\n    }\n\n    button {\n      margin: 20px 0;\n    }\n  "],
-                        template: "\n    <div class=\"row\" *ngIf=\"burger\" class=\"burger row\">\n    \t<div class=\"col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6\">\n    \t\t\t<span class=\"badge\">{{ranking}}</span>\n    \t</div>\n    \t<div class=\"col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6\">\n    \t\t<h4>Mmm... sugen p\u00E5 en burgare fr\u00E5n {{burger.name}}?</h4>\n    \t\t<a href=\"{{ burger.url }}\" target=\"_blank\">Kolla in deras hemsida...</a>\n    \t</div>\n    \t<div class=\"col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6\">\n    \t\t<img src=\"img/{{ burger.key + '.jpg' }}\" (click)=\"onSelect(burger)\" class=\"img-responsive img-circle\" />\n    \t</div>\n    \t<div class=\"col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6\">\n    \t</div>\n    \t<div class=\"col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6 hidden\">\n    \t\t<button (click)=\"goBackToBurgers()\" class=\"btn btn-default\">Tillbaka</button>\n    \t</div>\n    </div>\n  ",
+                        selector: 'burger-detail',
+                        styles: ["\n    .burger-detail h4 {\n      display: inline;\n    }\n\n    .burger-detail .badge {\n      font-size: 5em;\n      margin-bottom: 20px;\n      background-color: #000;\n    }\n\n    .burger-detail img {\n      margin: 20px 0;\n    }\n\n    button {\n      margin: 20px 0;\n    }\n  "],
+                        template: "\n    <div class=\"row\" *ngIf=\"burger\" class=\"burger-detail row\">\n    \t<div class=\"col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6\">\n    \t\t\t<span class=\"badge\">{{ranking}}</span>\n    \t</div>\n    \t<div class=\"col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6\">\n    \t\t<h4>Mmm... sugen p\u00E5 en burgare fr\u00E5n {{burger.name}}?</h4>\n    \t\t<a href=\"{{ burger.url }}\" target=\"_blank\">Kolla in deras hemsida...</a>\n    \t</div>\n    \t<div class=\"col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6\">\n    \t\t<img src=\"/img/{{ burger.key + '.jpg' }}\" (click)=\"onSelect(burger)\" class=\"img-responsive img-circle\" />\n    \t</div>\n    \t<div class=\"col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6\">\n    \t</div>\n    \t<div class=\"col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6 hidden\">\n    \t\t<button (click)=\"goBackToBurgers()\" class=\"btn btn-default\">Tillbaka</button>\n    \t</div>\n    </div>\n  ",
                     }), 
                     __metadata('design:paramtypes', [burger_service_1.BurgerService, router_1.RouteParams, router_1.Router])
-                ], BurgerComponent);
-                return BurgerComponent;
+                ], BurgerDetailComponent);
+                return BurgerDetailComponent;
             }());
-            exports_1("BurgerComponent", BurgerComponent);
+            exports_1("BurgerDetailComponent", BurgerDetailComponent);
         }
     }
 });
-//# sourceMappingURL=burger.component.js.map
+//# sourceMappingURL=burger-detail.component.js.map

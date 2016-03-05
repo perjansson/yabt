@@ -3,7 +3,7 @@ import {provide, Component} from 'angular2/core';
 import {LocationStrategy, APP_BASE_HREF, HashLocationStrategy, RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Location} from 'angular2/router';
 import {BurgerService} from './burger/burger.service';
 import {BurgersComponent} from './burger/burgers.component';
-import {BurgerComponent} from './burger/burger.component';
+import {BurgerDetailComponent} from './burger/burger-detail.component';
 import {MapComponent} from './map/map.component';
 import {AboutComponent} from './about/about.component';
 
@@ -48,7 +48,7 @@ import {AboutComponent} from './about/about.component';
 
 @RouteConfig([
   { path: '/burgers', name: 'Burgers', component: BurgersComponent },
-  { path: '/burgers/:key', name: 'Burger', component: BurgerComponent },
+  { path: '/burgers/:key', name: 'Burger', component: BurgerDetailComponent },
   { path: '/map', name: 'Map', component: MapComponent },
   { path: '/about', name: 'About', component: AboutComponent }
 ])
@@ -70,5 +70,5 @@ export class AppComponent {
 bootstrap(AppComponent, [
   ROUTER_PROVIDERS,
   provide(LocationStrategy, {useClass: HashLocationStrategy}),
-  provide(APP_BASE_HREF, {useValue : '/' })
+  provide(APP_BASE_HREF, {useValue : '/yabt' })
 ]);
