@@ -20,7 +20,8 @@ System.register(['angular2/platform/browser', './app.component', 'angular2/core'
         execute: function() {
             browser_1.bootstrap(app_component_1.AppComponent, [
                 router_1.ROUTER_PROVIDERS,
-                core_1.provide(router_1.LocationStrategy, { useClass: router_1.HashLocationStrategy })
+                core_1.provide(router_1.LocationStrategy, { useClass: router_1.HashLocationStrategy }),
+                core_1.provide(router_1.APP_BASE_HREF, { useValue: '/' })
             ]);
         }
     }
