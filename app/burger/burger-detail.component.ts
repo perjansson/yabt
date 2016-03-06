@@ -1,5 +1,5 @@
 import {Component, OnInit} from 'angular2/core';
-import {Router, RouteParams} from 'angular2/router';
+import {RouteParams} from 'angular2/router';
 import {Burger} from './burger';
 import {BurgerService} from './burger.service';
 
@@ -37,9 +37,6 @@ import {BurgerService} from './burger.service';
     	</div>
     	<div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
     	</div>
-    	<div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6 hidden">
-    		<button (click)="goBackToBurgers()" class="btn btn-default">Tillbaka</button>
-    	</div>
     </div>
   `,
 })
@@ -47,7 +44,7 @@ export class BurgerDetailComponent implements OnInit {
   public burger: Burger;
   public ranking: number;
 
-  constructor(private burgerService: BurgerService, private routeParams: RouteParams, private router: Router) {
+  constructor(private burgerService: BurgerService, private routeParams: RouteParams) {
   }
 
   ngOnInit() {
@@ -56,9 +53,5 @@ export class BurgerDetailComponent implements OnInit {
       this.burgerService.getBurger(key).then(burger => this.burger = burger);
       this.burgerService.getRanking(key).then(ranking => this.ranking = ranking);
     }
-  }
-
-  goBackToBurgers() {
-    this.router.navigate(['burgers']);
   }
 }

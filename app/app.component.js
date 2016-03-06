@@ -40,9 +40,10 @@ System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router'
             }],
         execute: function() {
             AppComponent = (function () {
-                function AppComponent(location) {
+                function AppComponent(router, location) {
+                    this.router = router;
                     this.location = location;
-                    location.go('/burgers');
+                    this.router.navigate(['Burgers']);
                 }
                 AppComponent.prototype.getLinkStyle = function (path) {
                     return this.location.path() === path;
@@ -61,7 +62,7 @@ System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router'
                         { path: '/map', name: 'Map', component: map_component_1.MapComponent },
                         { path: '/about', name: 'About', component: about_component_1.AboutComponent }
                     ]), 
-                    __metadata('design:paramtypes', [router_1.Location])
+                    __metadata('design:paramtypes', [router_1.Router, router_1.Location])
                 ], AppComponent);
                 return AppComponent;
             }());
@@ -69,7 +70,7 @@ System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router'
             browser_1.bootstrap(AppComponent, [
                 router_1.ROUTER_PROVIDERS,
                 core_1.provide(router_1.LocationStrategy, { useClass: router_1.HashLocationStrategy }),
-                core_1.provide(router_1.APP_BASE_HREF, { useValue: '/' })
+                core_1.provide(router_1.APP_BASE_HREF, { useValue: '/yabt' })
             ]);
         }
     }

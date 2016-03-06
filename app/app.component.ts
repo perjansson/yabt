@@ -1,6 +1,6 @@
 import {bootstrap} from 'angular2/platform/browser';
 import {provide, Component} from 'angular2/core';
-import {LocationStrategy, APP_BASE_HREF, HashLocationStrategy, RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Location} from 'angular2/router';
+import {Router, LocationStrategy, APP_BASE_HREF, HashLocationStrategy, RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Location} from 'angular2/router';
 import {BurgerService} from './burger/burger.service';
 import {BurgerListComponent} from './burger/burger-list.component';
 import {BurgerDetailComponent} from './burger/burger-detail.component';
@@ -55,11 +55,8 @@ import {AboutComponent} from './about/about.component';
 
 export class AppComponent {
 
-  location: Location;
-
-  constructor(location: Location) {
-    this.location = location;
-    location.go('/burgers');
+  constructor(private router: Router, private location: Location) {
+    this.router.navigate(['Burgers']);
   }
 
   getLinkStyle(path: String) {
@@ -70,5 +67,5 @@ export class AppComponent {
 bootstrap(AppComponent, [
   ROUTER_PROVIDERS,
   provide(LocationStrategy, {useClass: HashLocationStrategy}),
-  provide(APP_BASE_HREF, {useValue : '/' })
+  provide(APP_BASE_HREF, {useValue : '/yabt' })
 ]);
