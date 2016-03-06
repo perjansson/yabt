@@ -50,7 +50,7 @@ System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router'
                 };
                 AppComponent = __decorate([
                     core_1.Component({
-                        selector: 'my-app',
+                        selector: 'burger-app',
                         styles: ["\n    nav {\n      margin-bottom: 40px;\n    }\n    nav > .row {\n      margin-top: 30px;\n    }\n    nav button.router-link-active {\n      background-color: #286090;\n      border-color: #204d74;\n    }\n    main {\n      margin-top: 30px;\n    }\n  "],
                         template: "\n    <nav>\n      <div class=\"row\">\n        <div class=\"col-xs-12 text-center\">\n          <button class=\"btn btn-primary btn-lg\" [class.active]=\"getLinkStyle('#/burgers')\" [routerLink]=\"['Burgers']\">Burgers</button>\n          <!--a [class.active]=\"getLinkStyle('#/map')\" [routerLink]=\"['Map']\">Map</a-->\n          <button class=\"btn btn-primary btn-lg\"[class.active]=\"getLinkStyle('#/about')\" [routerLink]=\"['About']\">About</button>\n        </div>\n      </div>\n    </nav>\n    <main>\n      <div class=\"row\">\n        <div class=\"col-xs-12\">\n          <router-outlet></router-outlet>\n        </div>\n      </div>\n    </main>\n  ",
                         directives: [router_1.ROUTER_DIRECTIVES],

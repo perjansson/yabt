@@ -8,7 +8,7 @@ import {MapComponent} from './map/map.component';
 import {AboutComponent} from './about/about.component';
 
 @Component({
-  selector: 'my-app',
+  selector: 'burger-app',
   styles: [`
     nav {
       margin-bottom: 40px;
