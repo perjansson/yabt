@@ -9,33 +9,67 @@ import {BurgerService} from './burger.service';
     .burger-detail h4 {
       display: inline;
     }
-
-    .burger-detail .badge {
-      font-size: 4em;
-      margin-right: 20px;
-      background-color: #000;
+    .burger-detail .row {
+      margin-bottom: 15px;
+    }
+    .burger {
+      margin-bottom: 40px;
+    }
+    .polaroid {
+      position: relative;
+    }
+    .polaroid img {
+      cursor: pointer;
+      border: 10px solid #fff;
+      border-bottom: 70px solid #fff;
+      -webkit-box-shadow: 8px 8px 8px #888;
+      -moz-box-shadow: 8px 8px 8px #888;
+      box-shadow: 8px 8px 8px #888;
+    }
+    .polaroid p {
+      position: absolute;
+      text-align: center;
+      margin-left: 30px;
+      margin-bottom: 20px;
+      bottom: 0px;
+      font: 400 18px/1 'Inconsolata', cursive;
+      color: #000;
+    }
+    .polaroid p a {
+      font-size: 1.2em;
     }
 
-    .burger-detail img {
-      margin: 20px 0;
-    }
+    @media only screen and (min-width : 768px) {
 
-    button {
-      margin: 20px 0;
+      .polaroid p a {
+        font-size: 1.5em;
+      }
+
     }
   `],
   template: `
     <div class="row" *ngIf="burger" class="burger-detail row">
     	<div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
-        <header>
-  			   <span class="badge">{{ranking}}</span> <h4>Mmm... sugen på en burgare från {{burger.name}}?</h4>
-        </header>
-    		<a href="{{ burger.url }}" target="_blank">Kolla in deras hemsida...</a>
-    	</div>
-    	<div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
-    		<img src="../img/{{ burger.key + '.jpg' }}" (click)="onSelect(burger)" class="img-responsive img-circle" />
-    	</div>
-    	<div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
+        <div class="row">
+          <div class="col-xs-12">
+            <header>
+      			   <h4>Mmm... sugen på en burgare från {{burger.name}}?</h4>
+            </header>
+          </div>
+        </div>
+        <div class="row">
+        	<div class="col-xs-12">
+            <a href="{{ burger.url }}" target="_blank">Kolla in deras hemsida...</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 burger polaroid" [hidden]="burger.key===''" id="{{burger.key}}">
+            <p>
+              <a href="{{ burger.url }}" target="_blank">{{ ranking + '. ' + burger.name }}</a>
+            </p>
+            <img src="../img/{{ burger.key + '.jpg' }}" (click)="onSelect(burger)" class="img-responsive" />
+          </div>
+        </div>
     	</div>
     </div>
   `,

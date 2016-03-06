@@ -10,7 +10,7 @@ import {Burger} from './burger';
     }
     .polaroid {
       position: relative;
-      height: 250px;
+      height: 225px;
       overflow: hidden;
       border: 10px solid #fff;
       -webkit-box-shadow: 8px 8px 8px #888;
