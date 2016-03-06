@@ -45,7 +45,7 @@ import {Burger} from './burger';
       <p>
         <a href="{{ burger.url }}" target="_blank">{{ rank + '. ' + burger.name }}</a>
       </p>
-      <img src="/yabt/img/{{ burger.key + '.jpg' }}" (click)=burgerClick(burger) class="img-responsive" />
+      <img src="img/{{ burger.key + '.jpg' }}" (click)=burgerClick(burger) class="img-responsive" />
     </div>
   `,
   directives: [ROUTER_DIRECTIVES]
