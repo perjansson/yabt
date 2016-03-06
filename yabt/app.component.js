@@ -1,3 +1,4 @@
+/// <reference path="../typings/jquery.d.ts" />
 System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router', './burger/burger.service', './burger/burger-list.component', './burger/burger-detail.component', './map/map.component', './about/about.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
@@ -45,14 +46,18 @@ System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router'
                     this.location = location;
                     this.router.navigate(['Burgers']);
                 }
+                AppComponent.prototype.ngAfterViewInit = function () {
+                    console.log('ngAfterViewInit');
+                    /*$('[data-toggle="tooltip"]').tooltip();*/
+                };
                 AppComponent.prototype.getLinkStyle = function (path) {
                     return this.location.path() === path;
                 };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'burger-app',
-                        styles: ["\n    nav {\n      margin-bottom: 40px;\n    }\n    nav > .row {\n      margin-top: 30px;\n    }\n    nav button.router-link-active {\n      background-color: #286090;\n      border-color: #204d74;\n    }\n    main {\n      margin-top: 30px;\n    }\n  "],
-                        template: "\n    <nav>\n      <div class=\"row\">\n        <div class=\"col-xs-12 text-center\">\n          <button class=\"btn btn-primary btn-lg\" [class.active]=\"getLinkStyle('#/burgers')\" [routerLink]=\"['Burgers']\">Burgers</button>\n          <!--a [class.active]=\"getLinkStyle('#/map')\" [routerLink]=\"['Map']\">Map</a-->\n          <button class=\"btn btn-primary btn-lg\"[class.active]=\"getLinkStyle('#/about')\" [routerLink]=\"['About']\">About</button>\n        </div>\n      </div>\n    </nav>\n    <main>\n      <div class=\"row\">\n        <div class=\"col-xs-12\">\n          <router-outlet></router-outlet>\n        </div>\n      </div>\n    </main>\n  ",
+                        styles: ["\n    nav {\n      margin-bottom: 40px;\n    }\n    nav > .row {\n      margin-top: 30px;\n    }\n    nav button {\n      margin: 0px 5px;\n    }\n    nav button.router-link-active {\n      background-color: #286090;\n      border-color: #204d74;\n    }\n    main {\n      margin-top: 30px;\n    }\n  "],
+                        template: "\n    <nav>\n      <div class=\"row\">\n        <div class=\"col-xs-12 text-center\">\n          <button class=\"btn btn-primary btn-lg\" [class.active]=\"getLinkStyle('#/burgers')\" [routerLink]=\"['Burgers']\"><i class=\"fa fa-bars\"></i> Burgers</button>\n          <button class=\"btn btn-primary btn-lg\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"This has not been built yet...\" [class.active]=\"getLinkStyle('#/map')\" [routerLink]=\"['Map']\"><i class=\"fa fa-location-arrow\"></i> Map</button>\n          <button class=\"btn btn-primary btn-lg\" [class.active]=\"getLinkStyle('#/about')\" [routerLink]=\"['About']\"><i class=\"fa fa-users\"></i> About</button>\n        </div>\n      </div>\n    </nav>\n    <main>\n      <div class=\"row\">\n        <div class=\"col-xs-12\">\n          <router-outlet></router-outlet>\n        </div>\n      </div>\n    </main>\n  ",
                         directives: [router_1.ROUTER_DIRECTIVES],
                         providers: [burger_service_1.BurgerService, router_1.ROUTER_PROVIDERS, router_1.Location]
                     }),
