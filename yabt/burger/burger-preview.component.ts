@@ -6,36 +6,37 @@ import {Burger} from './burger';
   selector: 'burger-preview',
   styles: [`
     .burger {
-      margin-bottom: 40px;
+      padding: 0;
     }
     .polaroid {
       position: relative;
-    }
-    .polaroid img {
-      cursor: pointer;
+      height: 250px;
+      overflow: hidden;
       border: 10px solid #fff;
-      border-bottom: 70px solid #fff;
       -webkit-box-shadow: 8px 8px 8px #888;
       -moz-box-shadow: 8px 8px 8px #888;
       box-shadow: 8px 8px 8px #888;
     }
+    .polaroid img {
+      cursor: pointer;
+    }
     .polaroid p {
       position: absolute;
-      text-align: center;
-      margin-left: 30px;
-      margin-bottom: 20px;
-      bottom: 0px;
+      margin-left: 20px;
+      top: 20px;
       font: 400 18px/1 'Inconsolata', cursive;
       color: #000;
     }
     .polaroid p a {
       font-size: 1.2em;
+      color: #fff;
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #333, 0 0 70px #333, 0 0 80px #333, 0 0 100px #333, 0 0 150px #333;
     }
 
     @media only screen and (min-width : 768px) {
 
       .polaroid p a {
-        font-size: 1.5em;
+        font-size: 1.9em;
       }
 
     }
