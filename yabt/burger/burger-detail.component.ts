@@ -33,7 +33,7 @@ import {BurgerService} from './burger.service';
     		<a href="{{ burger.url }}" target="_blank">Kolla in deras hemsida...</a>
     	</div>
     	<div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
-    		<img src="/img/{{ burger.key + '.jpg' }}" (click)="onSelect(burger)" class="img-responsive img-circle" />
+    		<img src="img/{{ burger.key + '.jpg' }}" (click)="onSelect(burger)" class="img-responsive img-circle" />
     	</div>
     	<div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
     	</div>
