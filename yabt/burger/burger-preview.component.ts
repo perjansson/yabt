@@ -28,7 +28,15 @@ import {Burger} from './burger';
     .burger p a {
       font-size: 1.2em;
       color: #fff;
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #333, 0 0 70px #333, 0 0 80px #333, 0 0 100px #333, 0 0 150px #333;
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #000, 0 0 70px #000, 0 0 80px #000, 0 0 100px #000, 0 0 150px #000;
+    }
+
+    @media only screen and (min-width : 480px) {
+
+      .polaroid p a {
+        font-size: 1.4em;
+      }
+
     }
 
     @media only screen and (min-width : 768px) {
