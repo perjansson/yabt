@@ -29,11 +29,11 @@ System.register(['angular2/core', './burgers.data'], function(exports_1, context
                 };
                 BurgerService.prototype.getBurger = function (key) {
                     return Promise.resolve(burgers_data_1.BURGERS)
-                        .then(function (burgers) { return burgers.filter(function (b) { return b.key === key; })[0]; });
+                        .then(function (burgers) { return burgers.filter(function (burger) { return burger.key === key; })[0]; });
                 };
                 BurgerService.prototype.getRanking = function (key) {
                     return Promise.resolve(burgers_data_1.BURGERS)
-                        .then(function (burgers) { return burgers.map(function (b) { return b.key; }).indexOf(key) + 1; });
+                        .then(function (burgers) { return burgers.map(function (burger) { return burger.key; }).indexOf(key) + 1; });
                 };
                 BurgerService = __decorate([
                     core_1.Injectable(), 

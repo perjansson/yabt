@@ -8,7 +8,7 @@ import {Burger} from './burger';
     .burger {
       padding: 0;
       position: relative;
-      height: 225px;
+      height: 200px;
       overflow: hidden;
       border: 10px solid #fff;
       -webkit-box-shadow: 8px 8px 8px #888;
@@ -17,8 +17,24 @@ import {Burger} from './burger';
       transition: height 0.15s ease-in-out;
     }
     .burger.active {
-      height: 410px;
+      height: 300px;
       transition: height 0.15s ease-in-out;
+    }
+    @media only screen and (min-width : 768px) {
+      .burger  {
+        height: 250px;
+      }
+      .burger.active {
+        height: 430px;
+      }
+    }
+    @media only screen and (min-width : 992px) {
+      .burger  {
+        height: 275px;
+      }
+      .burger.active {
+        height: 550px;
+      }
     }
     .burger img {
       cursor: pointer;
@@ -35,25 +51,19 @@ import {Burger} from './burger';
       color: #fff;
       text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #000, 0 0 70px #000, 0 0 80px #000, 0 0 100px #000, 0 0 150px #000;
     }
-
     @media only screen and (min-width : 480px) {
-
       .polaroid p a {
         font-size: 1.4em;
       }
-
     }
-
     @media only screen and (min-width : 768px) {
-
       .polaroid p a {
         font-size: 1.9em;
       }
-
     }
   `],
   template: `
-    <div class="burger polaroid col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6" [ngClass]="{'active': isActive}" (mouseover)="isActive=true" (mouseout)="isActive=false" [hidden]="burger.key===''" id="{{burger.key}}">
+    <div class="burger polaroid col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-8" [ngClass]="{'active': isActive}" (mouseover)="isActive=true" (mouseout)="isActive=false" [hidden]="burger.key===''" id="{{burger.key}}">
       <p>
         <a href="{{ burger.url }}" target="_blank">{{ rank + '. ' + burger.name }}</a>
       </p>
