@@ -8,7 +8,11 @@ import {BurgerService} from './../burger/burger.service';
   selector: 'map',
   providers: [BurgerService],
   template: `
-    <div class="alert alert-info" role="alert"> <strong>Hold on!</strong> Unfortunately I haven't had time to build the map component yet. </div>
+    <div class="row">
+      <div class="col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-8">
+        <div class="alert alert-info" role="alert"> <strong>Hold on!</strong> Unfortunately I haven't had time to build the map component yet. </div>
+      </div>
+    </div>
   `,
   directives: [ROUTER_DIRECTIVES, CORE_DIRECTIVES, FORM_DIRECTIVES]
 })

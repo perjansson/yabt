@@ -38,22 +38,19 @@ import {BurgerService} from './burger.service';
     .polaroid p a {
       font-size: 1.2em;
     }
-
     @media only screen and (min-width : 768px) {
-
       .polaroid p a {
         font-size: 1.5em;
       }
-
     }
   `],
   template: `
-    <div class="row" *ngIf="burger" class="burger-detail row">
-    	<div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
+    <div *ngIf="burger" class="burger-detail row">
+    	<div class="col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-8">
         <div class="row">
           <div class="col-xs-12">
             <header>
-      			   <h4>Mmm... sugen på en burgare från {{burger.name}}?</h4>
+      			   <h3>Mmm... sugen på en burgare från {{burger.name}}?</h3>
             </header>
           </div>
         </div>
@@ -67,7 +64,7 @@ import {BurgerService} from './burger.service';
             <p>
               <a href="{{ burger.url }}" target="_blank">{{ ranking + '. ' + burger.name }}</a>
             </p>
-            <img src="../img/{{ burger.key + '.jpg' }}" (click)="onSelect(burger)" class="img-responsive" />
+            <img src="img/{{ burger.key + '.jpg' }}" (click)="onSelect(burger)" class="img-responsive" />
           </div>
         </div>
     	</div>

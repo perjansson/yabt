@@ -22,7 +22,7 @@ import {TesterService} from './tester.service';
   `],
   template: `
     <div class="row">
-      <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
+      <div class="col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-8">
         <h4>About</h4>
         <p class="intro">
           We live and work in Stockholm, Sweden. We are software developers. We love hamburgers. We love it so much we decided to try and find the best lunch hamburger in town. We have a pretty simple criteria for which hamburgers to try and we have an even simpler way to rank the hamburgers? So, if you’re ever in Stockholm and in the mood for a hamburger look no further. Here’s the current standings of the awesome hamburgers we’ve tried:
