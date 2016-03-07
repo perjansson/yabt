@@ -41,10 +41,8 @@ System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router'
             }],
         execute: function() {
             AppComponent = (function () {
-                function AppComponent(router, location) {
-                    this.router = router;
+                function AppComponent(location) {
                     this.location = location;
-                    this.router.navigate(['Burgers']);
                 }
                 AppComponent.prototype.ngAfterViewInit = function () {
                     $('[data-toggle="tooltip"]').tooltip();
@@ -58,15 +56,15 @@ System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router'
                         styles: ["\n    nav {\n      margin-bottom: 40px;\n    }\n    nav > .row {\n      margin-top: 30px;\n    }\n    nav button {\n      margin: 0px 5px;\n    }\n    nav button.router-link-active {\n      background-color: #286090;\n      border-color: #204d74;\n    }\n    main {\n      margin-top: 30px;\n    }\n  "],
                         template: "\n    <nav>\n      <div class=\"row\">\n        <div class=\"col-xs-12 text-center\">\n          <button class=\"btn btn-primary btn-lg\" [class.active]=\"getLinkStyle('#/burgers')\" [routerLink]=\"['Burgers']\"><i class=\"fa fa-bars\"></i> Burgers</button>\n          <button class=\"btn btn-primary btn-lg\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"This has not been built yet...\" [class.active]=\"getLinkStyle('#/map')\" [routerLink]=\"['Map']\"><i class=\"fa fa-location-arrow\"></i> Map</button>\n          <button class=\"btn btn-primary btn-lg\" [class.active]=\"getLinkStyle('#/about')\" [routerLink]=\"['About']\"><i class=\"fa fa-users\"></i> About</button>\n        </div>\n      </div>\n    </nav>\n    <main>\n      <div class=\"row\">\n        <div class=\"col-xs-12\">\n          <router-outlet></router-outlet>\n        </div>\n      </div>\n    </main>\n  ",
                         directives: [router_1.ROUTER_DIRECTIVES],
-                        providers: [burger_service_1.BurgerService, router_1.ROUTER_PROVIDERS, router_1.Location]
+                        providers: [burger_service_1.BurgerService, router_1.Location]
                     }),
                     router_1.RouteConfig([
-                        { path: '/burgers', name: 'Burgers', component: burger_list_component_1.BurgerListComponent },
+                        { path: '/burgers', name: 'Burgers', component: burger_list_component_1.BurgerListComponent, useAsDefault: true },
                         { path: '/burgers/:key', name: 'Burger', component: burger_detail_component_1.BurgerDetailComponent },
                         { path: '/map', name: 'Map', component: map_component_1.MapComponent },
                         { path: '/about', name: 'About', component: about_component_1.AboutComponent }
                     ]), 
-                    __metadata('design:paramtypes', [router_1.Router, router_1.Location])
+                    __metadata('design:paramtypes', [router_1.Location])
                 ], AppComponent);
                 return AppComponent;
             }());
@@ -74,7 +72,7 @@ System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router'
             browser_1.bootstrap(AppComponent, [
                 router_1.ROUTER_PROVIDERS,
                 core_1.provide(router_1.LocationStrategy, { useClass: router_1.HashLocationStrategy })
-            ]);
+            ]).catch(function (err) { return console.error(err); });
         }
     }
 });

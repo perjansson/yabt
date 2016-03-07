@@ -2,7 +2,7 @@
 
 import {bootstrap} from 'angular2/platform/browser';
 import {provide, Component} from 'angular2/core';
-import {Router, LocationStrategy, APP_BASE_HREF, HashLocationStrategy, RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Location} from 'angular2/router';
+import {Router, LocationStrategy, APP_BASE_HREF, HashLocationStrategy, PathLocationStrategy, RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Location} from 'angular2/router';
 import {BurgerService} from './burger/burger.service';
 import {BurgerListComponent} from './burger/burger-list.component';
 import {BurgerDetailComponent} from './burger/burger-detail.component';
@@ -48,11 +48,11 @@ import {AboutComponent} from './about/about.component';
     </main>
   `,
   directives: [ROUTER_DIRECTIVES],
-  providers: [BurgerService, ROUTER_PROVIDERS, Location]
+  providers: [BurgerService, Location]
 })
 
 @RouteConfig([
-  { path: '/burgers', name: 'Burgers', component: BurgerListComponent },
+  { path: '/burgers', name: 'Burgers', component: BurgerListComponent, useAsDefault: true },
   { path: '/burgers/:key', name: 'Burger', component: BurgerDetailComponent },
   { path: '/map', name: 'Map', component: MapComponent },
   { path: '/about', name: 'About', component: AboutComponent }
@@ -60,9 +60,7 @@ import {AboutComponent} from './about/about.component';
 
 export class AppComponent {
 
-  constructor(private router: Router, private location: Location) {
-    this.router.navigate(['Burgers']);
-  }
+  constructor(private location: Location) { }
 
   ngAfterViewInit(){
     $('[data-toggle="tooltip"]').tooltip();
@@ -74,6 +72,6 @@ export class AppComponent {
 }
 
 bootstrap(AppComponent, [
-  ROUTER_PROVIDERS,
-  provide(LocationStrategy, {useClass: HashLocationStrategy})
-]);
+    ROUTER_PROVIDERS,
+    provide(LocationStrategy, { useClass: HashLocationStrategy })
+]).catch(err => console.error(err));
